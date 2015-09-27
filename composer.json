@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Zoxta\\Csrf\\": "Zoxta/Csrf/"
+            "Zoxta\\Csrf\\": "src/"
         }
     },
     "require": {
