@@ -7,9 +7,16 @@ It uses the JSON Web Token standard so it does not depend on session/cookies.
 Quick CSRF depends on the beautiful [lcobucci/jwt](https://github.com/lcobucci/jwt) JWT implementation.
 
 # Installation
+
+Edit your project's `composer.json` to require `zoxta/csrf`.
+
 ````
-composer require zoxta/csrf
+"require": {
+    "zoxta/csrf": "dev-master"
+}
 ````
+
+Then run `composer update`
 
 # Usage
 
@@ -28,14 +35,14 @@ if (! empty($_POST['_token'])) {
 
     # check if CSRF is invalid
     if ($CsrfToken->isInvalid()) {
-        
+
         # return an error if CSRF token is invalid/expired
         echo '<h1>Invalid token, stop.</h1>';
-        
+
     } else {
-    
+
         echo '<h1>Valid token, process form.</h1>';
-        
+
     }
 
     exit;
