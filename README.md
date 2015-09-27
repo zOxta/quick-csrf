@@ -1,7 +1,7 @@
 # Quick CSRF
-![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
+[![Latest Stable Version](https://poser.pugx.org/zoxta/csrf/v/stable)](https://packagist.org/packages/zoxta/csrf) [![Total Downloads](https://poser.pugx.org/zoxta/csrf/downloads)](https://packagist.org/packages/zoxta/csrf) [![Latest Unstable Version](https://poser.pugx.org/zoxta/csrf/v/unstable)](https://packagist.org/packages/zoxta/csrf) [![License](https://poser.pugx.org/zoxta/csrf/license)](https://packagist.org/packages/zoxta/csrf)
 
-Quick CSRF is stateless CSRF protection for forms that requires almost zero-configuration.
+Quick CSRF offers stateless CSRF protection for forms that requires almost zero-configuration.
 It uses the JSON Web Token standard so it does not depend on session/cookies.
 
 Quick CSRF depends on the beautiful [lcobucci/jwt](https://github.com/lcobucci/jwt) JWT implementation.
@@ -73,3 +73,7 @@ Or you can echo the whole input field for simplicity using `$CsrfToken->field()`
     <input type="submit" value="Submit Form">
 </form>
 ````
+
+# TODO
+- Ability to edit default JWT options.
+- Ability to support sending tokens via GET requests or request header.
