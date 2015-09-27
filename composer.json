@@ -1,0 +1,23 @@
+{
+    "name": "zoxta/csrf",
+    "description": "A quick and easy stateless CSRF protection for forms.",
+    "license": "MIT",
+    "keywords": [
+      "csrf",
+      "jwt"
+    ],
+    "authors": [
+      {
+        "name": "Islam Essam",
+        "email": "zoxta@zoxta.net"
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zoxta\\Csrf\\": "Zoxta/Csrf/"
+        }
+    },
+    "require": {
+        "lcobucci/jwt": "^3.0"
+    }
+}
