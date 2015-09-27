@@ -64,13 +64,13 @@ class JwtCsrfToken
 
         $this->signer         = new Sha256();
 
-        $this->parser         = new Parser() and $this->set();
+        $this->parser         = new Parser() and $this->set($receivedToken);
 
         $this->issuer         = $this->audience = 'http://' . $_SERVER['HTTP_HOST'];
 
         $this->validator      = new ValidationData();
 
-        $this->jwtSecret      = defined(JWT_SECRET) ? JWT_SECRET : uniqid('UH(&*G^(F&%d86udtV#HoIHVKIYURtfgi652857');
+        $this->jwtSecret      = defined('JWT_SECRET') ? JWT_SECRET : uniqid('UH(&*G^(F&%d86udtV#HoIHVKIYURtfgi652857');
 
         $this->generatedToken =
             (new Builder())->setIssuer($this->issuer) // Configures the issuer (iss claim)
@@ -166,7 +166,7 @@ class JwtCsrfToken
     {
         try {
 
-            $this->receivedToken = $token ? $this->parser->parse((string) $token) :
+            $this->receivedToken = ! empty($token) ? $this->parser->parse((string) $token) :
                 (! empty($_POST['_token']) ? $this->parser->parse((string) $_POST['_token']) : false);
 
         } catch (Exception $e) {
