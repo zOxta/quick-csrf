@@ -66,7 +66,7 @@ class JwtCsrfToken
 
         $this->parser         = new Parser() and $this->set($receivedToken);
 
-        $this->issuer         = $this->audience = 'http://' . $_SERVER['HTTP_HOST'];
+        $this->issuer         = $this->audience = 'http://' . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'domain');
 
         $this->validator      = new ValidationData();
 
